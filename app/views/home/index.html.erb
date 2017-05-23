@@ -1,35 +1,27 @@
-<!-- component template -->
-<script type="text/x-template" id="grid-template">
-  <table>
-    <thead>
-      <tr>
-        <th v-for="key in columns"
-          @click="sortBy(key)"
-          :class="{ active: sortKey == key }">
-          {{ key | capitalize }}
-          <span class="arrow" :class="sortOrders[key] > 0 ? 'asc' : 'dsc'">
-          </span>
-        </th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr v-for="entry in filteredData">
-        <td v-for="key in columns">
-          {{entry[key]}}
-        </td>
-      </tr>
-    </tbody>
+<div>
+  <table class="todo-list">
+    <tr>
+      <th>No</th>
+      <th>Todo</th>
+      <th>Done</th>
+    </tr>
   </table>
-</script>
+</div>
 
-<!-- demo root element -->
-<div id="demo">
-  <form id="search">
-    Search <input name="query" v-model="searchQuery">
-  </form>
-  <demo-grid
-    :data="gridData"
-    :columns="gridColumns"
-    :filter-key="searchQuery">
-  </demo-grid>
+<form class="input-form">
+  <input id="title" type="text">
+  <input id="post-btn" type="button" value="投稿">
+</form>
+
+<div class="edit-modal-wrapper">
+  <div class="modal">
+    <div class="close-modal">閉じる</div>
+    <div class="edit-modal">
+      <h2>Todoを編集</h2>
+      <form class="edit-form">
+        <input id="repost-title" type="text">
+        <input id="repost-btn" type="button" value="修正">
+      </form>
+    </div>
+  </div>
 </div>
