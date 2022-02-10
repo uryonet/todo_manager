@@ -16,7 +16,7 @@
     "glob": "^7.1.2",
     "jquery": "^3.2.1",
     "js-yaml": "^4.1.0",
-    "node-sass": "^6.0.0",
+    "node-sass": "^7.0.0",
     "path-complete-extname": "^1.0.0",
     "postcss-loader": "^6.1.0",
     "postcss-smart-import": "^0.7.0",
